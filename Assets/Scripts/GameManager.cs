@@ -14,7 +14,9 @@ public class GameManager : Singleton<GameManager>
     // Start is called before the first frame update
     void Start()
     {
-        
+        //Example of how to register Event Listenter
+        //GameManager.Instance.GameStarted += OnGameStart;
+        GameStarted += OnGameStart;
     }
 
     // Update is called once per frame
@@ -23,5 +25,9 @@ public class GameManager : Singleton<GameManager>
         
     }
 
-    
+    //Function called when GameStarted Event is triggered
+    void OnGameStart()
+    {
+        
+    }
 }
