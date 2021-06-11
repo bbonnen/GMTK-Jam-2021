@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 5f;
+    public float airMoveSpeed = 5f;
     public float jumpForce = 100f;
     public Rigidbody2D myRig;
     public KeyCode[] jumpButton;
@@ -23,17 +24,19 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         GetInput();
-        ProcessMovement();
+        //ProcessMovement();
     }
 
     private void FixedUpdate()
     {
         //myRig.velocity += moveSpeed * Vector2.right * horizontalInput * Time.fixedDeltaTime;
+        ProcessMovement();
     }
 
     private void ProcessMovement()
     {
-        transform.Translate(new Vector3(horizontalInput * moveSpeed * Time.deltaTime, 0, 0));
+        transform.Translate(new Vector3(horizontalInput * (airborne ? airMoveSpeed : moveSpeed) * Time.fixedDeltaTime, 0, 0));
+        //myRig.MovePosition(myRig.position + Vector2.right * horizontalInput * (airborne ? airMoveSpeed : moveSpeed) * Time.fixedDeltaTime);
         if (!airborne && jumpPressed)
         {
             airborne = true;

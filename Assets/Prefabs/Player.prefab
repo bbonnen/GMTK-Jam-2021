@@ -145,6 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  airMoveSpeed: 5
   jumpForce: 7
   myRig: {fileID: 0}
   jumpButton: 6600000020000000
