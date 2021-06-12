@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 791127497}
   - component: {fileID: 791127498}
   - component: {fileID: 4026890101375834320}
+  - component: {fileID: 7505666880725481909}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -298,3 +299,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endPoint: {fileID: 0}
+--- !u!114 &7505666880725481909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7505666880307846267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e8134f53338cd346b9080cd917a0566, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  connectionPoint: {fileID: 0}
+  pinataString: {fileID: 0}
+  stringLengthRange: {x: 1.5, y: 8}
+  playerDistanceRange: {x: 1.5, y: 12}
