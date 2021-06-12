@@ -909,6 +909,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PinataHavokk
       objectReference: {fileID: 0}
+    - target: {fileID: 7356479939945137829, guid: 4b87260adb09e79438d43aacfdf41a84, type: 3}
+      propertyPath: m_ConnectedRigidBody
+      value: 
+      objectReference: {fileID: 709156224}
     - target: {fileID: 7356479939945137830, guid: 4b87260adb09e79438d43aacfdf41a84, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -953,10 +957,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7356479939945137831, guid: 4b87260adb09e79438d43aacfdf41a84, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1c12a4228b378a045b763b910836ee0e, type: 3}
+    - target: {fileID: 7356479939945137831, guid: 4b87260adb09e79438d43aacfdf41a84, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356479939945137831, guid: 4b87260adb09e79438d43aacfdf41a84, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356479939945137831, guid: 4b87260adb09e79438d43aacfdf41a84, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356479939945137834, guid: 4b87260adb09e79438d43aacfdf41a84, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7356479939945137835, guid: 4b87260adb09e79438d43aacfdf41a84, type: 3}
       propertyPath: endPoint
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 709156223}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b87260adb09e79438d43aacfdf41a84, type: 3}
 --- !u!1001 &1176754467
@@ -996,7 +1020,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3808369383862567187, guid: 91f8bd4cbcfa19f4db422cae5fad29b5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -4.2
       objectReference: {fileID: 0}
     - target: {fileID: 3808369383862567187, guid: 91f8bd4cbcfa19f4db422cae5fad29b5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1028,6 +1052,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3808369383862567187, guid: 91f8bd4cbcfa19f4db422cae5fad29b5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3808369383862567188, guid: 91f8bd4cbcfa19f4db422cae5fad29b5, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3808369383862567188, guid: 91f8bd4cbcfa19f4db422cae5fad29b5, type: 3}
+      propertyPath: m_FlipY
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3808369383862567188, guid: 91f8bd4cbcfa19f4db422cae5fad29b5, type: 3}
@@ -1073,6 +1105,10 @@ PrefabInstance:
     - target: {fileID: 3808369383862567191, guid: 91f8bd4cbcfa19f4db422cae5fad29b5, type: 3}
       propertyPath: m_Name
       value: TestPlayerHavokk
+      objectReference: {fileID: 0}
+    - target: {fileID: 4304782538695525077, guid: 91f8bd4cbcfa19f4db422cae5fad29b5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4304782538695525077, guid: 91f8bd4cbcfa19f4db422cae5fad29b5, type: 3}
       propertyPath: m_Controller
@@ -1351,6 +1387,23 @@ SpringJoint2D:
   m_CorrespondingSourceObject: {fileID: 7356479939945137829, guid: 4b87260adb09e79438d43aacfdf41a84, type: 3}
   m_PrefabInstance: {fileID: 1026431231}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2064782052 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3808369383862567191, guid: 91f8bd4cbcfa19f4db422cae5fad29b5, type: 3}
+  m_PrefabInstance: {fileID: 1176754467}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2064782053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2064782052}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5329f05e9246bc4e8df17d1c3124a0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3808369383244145887
 PrefabInstance:
   m_ObjectHideFlags: 0
