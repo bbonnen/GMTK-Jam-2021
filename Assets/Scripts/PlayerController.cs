@@ -13,6 +13,10 @@ public class PlayerController : MonoBehaviour
     public Transform groundCheck;
     public string[] groundTags = { "Ground", "Platform", "Pinata" };
 
+    //Havokk
+    public AudioSource audioSource;
+    public AudioClip jumpSound;
+
     public float horizontalInput { get; private set; }
     public bool airborne { get; private set; }
     public bool jumpPressed { get; private set; }
@@ -48,6 +52,7 @@ public class PlayerController : MonoBehaviour
         {
             airborne = true;
             myRig.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            audioSource.PlayOneShot(jumpSound);
         }
     }
 

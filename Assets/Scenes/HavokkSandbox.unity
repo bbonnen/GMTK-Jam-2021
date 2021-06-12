@@ -1264,6 +1264,14 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: d3b2775ffc247ea459acc6b2f99f1b73, type: 2}
+    - target: {fileID: 6697828479894059173, guid: 91f8bd4cbcfa19f4db422cae5fad29b5, type: 3}
+      propertyPath: jumpSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 67d8bbc07a8227c498a11328bb303339, type: 3}
+    - target: {fileID: 6697828479894059173, guid: 91f8bd4cbcfa19f4db422cae5fad29b5, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 2064782054}
     - target: {fileID: 6697828479894059174, guid: 91f8bd4cbcfa19f4db422cae5fad29b5, type: 3}
       propertyPath: m_Parameters.colorGradient.key0.b
       value: 0.7830189
@@ -1898,7 +1906,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2064782052}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d44869efbf3fb8e4dbfa9ec62dd13dbe, type: 3}
   m_Name: 
