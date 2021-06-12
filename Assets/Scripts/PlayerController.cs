@@ -9,12 +9,14 @@ public class PlayerController : MonoBehaviour
     public float jumpForce = 100f;
     public Rigidbody2D myRig;
     public KeyCode[] jumpButton;
+    public KeyCode[] actionButton;
     public Transform groundCheck;
     public string[] groundTags = { "Ground", "Platform", "Pinata" };
 
     public float horizontalInput { get; private set; }
     public bool airborne { get; private set; }
     public bool jumpPressed { get; private set; }
+    private bool actionPressed = false;
 
     // Start is called before the first frame update
     void Start()
