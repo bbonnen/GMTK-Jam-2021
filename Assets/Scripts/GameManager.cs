@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : Singleton<GameManager>
 {
-    public GameObject player;
+    public PlayerController player;
     public enum GameStates{TitleScreen, Paused, InGame };
     public GameStates currentState = GameStates.TitleScreen;
 
@@ -17,6 +17,8 @@ public class GameManager : Singleton<GameManager>
         //Example of how to register Event Listenter
         //GameManager.Instance.GameStarted += OnGameStart;
         GameStarted += OnGameStart;
+        if (player == null)
+            player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
     }
 
     // Update is called once per frame

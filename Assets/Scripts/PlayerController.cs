@@ -12,14 +12,17 @@ public class PlayerController : MonoBehaviour
     public Transform groundCheck;
     public string[] groundTags = { "Ground", "Platform", "Pinata" };
 
-    private float horizontalInput = 0;
-    private bool airborne = false;
-    private bool jumpPressed = false;
+    public float horizontalInput { get; private set; } 
+    public bool airborne { get; private set; }
+    public bool jumpPressed { get; private set; }
 
     // Start is called before the first frame update
     void Start()
     {
         if (myRig == null) myRig = GetComponent<Rigidbody2D>();
+        horizontalInput = 0;
+        airborne = false;
+        jumpPressed = false;
     }
 
     // Update is called once per frame
@@ -60,7 +63,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (checkTags(collision.collider.tag) && collision.collider.transform.position.y + collision.gameObject.GetComponent<BoxCollider2D>().size.y < groundCheck.position.y)
+        if (checkTags(collision.collider.tag, groundTags) && collision.collider.transform.position.y + collision.gameObject.GetComponent<BoxCollider2D>().size.y < groundCheck.position.y)
         {
             airborne = false;
         }
@@ -68,7 +71,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (checkTags(collision.collider.tag) && collision.collider.transform.position.y + collision.gameObject.GetComponent<BoxCollider2D>().size.y < groundCheck.position.y)
+        if (checkTags(collision.collider.tag, groundTags) && collision.collider.transform.position.y + collision.gameObject.GetComponent<BoxCollider2D>().size.y < groundCheck.position.y)
             airborne = true;
     }
 
@@ -80,9 +83,9 @@ public class PlayerController : MonoBehaviour
     }
 */
 
-    private bool checkTags(string tag)
+    public static bool checkTags(string tag, string[] taglist)
     {
-        foreach(string t in groundTags)
+        foreach(string t in taglist)
         {
             if (tag == t)
                 return true;
