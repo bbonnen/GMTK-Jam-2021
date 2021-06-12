@@ -9,12 +9,15 @@ public class PlayerController : MonoBehaviour
     public float jumpForce = 100f;
     public Rigidbody2D myRig;
     public KeyCode[] jumpButton;
+    public KeyCode[] actionButton;
     public Transform groundCheck;
     public string[] groundTags = { "Ground", "Platform", "Pinata" };
 
     private float horizontalInput = 0;
     private bool airborne = false;
+    private bool touchingPresent = false;
     private bool jumpPressed = false;
+    private bool actionPressed = false;
 
     // Start is called before the first frame update
     void Start()
@@ -44,6 +47,19 @@ public class PlayerController : MonoBehaviour
             airborne = true;
             myRig.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
+
+        if (!airborne && actionPressed && touchingPresent)
+        {
+            // Start present wrapping action
+            Debug.Log("Wrapping present");
+            // Do floating bar completion animation
+        }
+        else 
+        {
+            // End present wrapping action
+
+            // Stop animation
+        }
     }
 
     //Get Input
@@ -54,8 +70,11 @@ public class PlayerController : MonoBehaviour
         //check all jump keys
         jumpPressed = false;
         foreach (KeyCode k in jumpButton)
-            if (Input.GetKey(k)) jumpPressed = true;
-
+            if (Input.GetKey(k)) jumpPressed = true; 
+        
+        actionPressed = false;
+        foreach (KeyCode k in actionButton)
+            if (Input.GetKey(k)) actionPressed = true;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -70,15 +89,35 @@ public class PlayerController : MonoBehaviour
     {
         if (checkTags(collision.collider.tag) && collision.collider.transform.position.y + collision.gameObject.GetComponent<BoxCollider2D>().size.y < groundCheck.position.y)
             airborne = true;
+
+        if (collision.collider.tag == "Present")
+        {
+            touchingPresent = false;
+        }
     }
 
-/*    private void OnCollisionStay2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        
-        if (airborne && (collision.collider.tag == "Ground" || collision.collider.tag == "Platform") && collision.collider.transform.position.y + collision.gameObject.GetComponent<BoxCollider2D>().size.y/2f < groundCheck.position.y)
-            airborne = false;
+        if (other.tag == "Present")
+        {
+            touchingPresent = true;
+        }
     }
-*/
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.tag == "Present")
+        {
+            touchingPresent = false;
+        }
+    }
+
+    /*    private void OnCollisionStay2D(Collision2D collision)
+        {
+
+            if (airborne && (collision.collider.tag == "Ground" || collision.collider.tag == "Platform") && collision.collider.transform.position.y + collision.gameObject.GetComponent<BoxCollider2D>().size.y/2f < groundCheck.position.y)
+                airborne = false;
+        }
+    */
 
     private bool checkTags(string tag)
     {
