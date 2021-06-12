@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
     public float jumpForce = 100f;
     public Rigidbody2D myRig;
     public KeyCode[] jumpButton;
+    public Transform groundCheck;
+    public string[] groundTags = { "Ground", "Platform", "Pinata" };
 
     private float horizontalInput = 0;
     private bool airborne = false;
@@ -58,13 +60,33 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.tag == "Ground" || collision.collider.tag == "Platform")
+        if (checkTags(collision.collider.tag) && collision.collider.transform.position.y + collision.gameObject.GetComponent<BoxCollider2D>().size.y < groundCheck.position.y)
+        {
             airborne = false;
+        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.collider.tag == "Ground" || collision.collider.tag == "Platform")
+        if (checkTags(collision.collider.tag) && collision.collider.transform.position.y + collision.gameObject.GetComponent<BoxCollider2D>().size.y < groundCheck.position.y)
             airborne = true;
+    }
+
+/*    private void OnCollisionStay2D(Collision2D collision)
+    {
+        
+        if (airborne && (collision.collider.tag == "Ground" || collision.collider.tag == "Platform") && collision.collider.transform.position.y + collision.gameObject.GetComponent<BoxCollider2D>().size.y/2f < groundCheck.position.y)
+            airborne = false;
+    }
+*/
+
+    private bool checkTags(string tag)
+    {
+        foreach(string t in groundTags)
+        {
+            if (tag == t)
+                return true;
+        }
+        return false;
     }
 }
