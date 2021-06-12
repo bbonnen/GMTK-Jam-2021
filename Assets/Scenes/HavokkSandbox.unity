@@ -843,7 +843,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 718077396}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.12, y: -2.33, z: 0}
+  m_LocalPosition: {x: -0.12, y: -2.33, z: 0.05}
   m_LocalScale: {x: 1.4499, y: 1.4499, z: 1.4499}
   m_Children: []
   m_Father: {fileID: 0}
@@ -987,6 +987,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7356479939945137824, guid: 4b87260adb09e79438d43aacfdf41a84, type: 3}
+      propertyPath: m_Size.y
+      value: 0.022508748
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356479939945137824, guid: 4b87260adb09e79438d43aacfdf41a84, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.008745626
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356479939945137824, guid: 4b87260adb09e79438d43aacfdf41a84, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.055636365
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356479939945137824, guid: 4b87260adb09e79438d43aacfdf41a84, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.06809091
+      objectReference: {fileID: 0}
     - target: {fileID: 7356479939945137826, guid: 4b87260adb09e79438d43aacfdf41a84, type: 3}
       propertyPath: m_Name
       value: PinataHavokk
