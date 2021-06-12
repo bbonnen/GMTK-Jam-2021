@@ -975,7 +975,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7356479939945137834, guid: 4b87260adb09e79438d43aacfdf41a84, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7356479939945137835, guid: 4b87260adb09e79438d43aacfdf41a84, type: 3}
       propertyPath: endPoint
@@ -1404,6 +1404,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5329f05e9246bc4e8df17d1c3124a0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shouldFlip: 0
 --- !u!1001 &3808369383244145887
 PrefabInstance:
   m_ObjectHideFlags: 0
