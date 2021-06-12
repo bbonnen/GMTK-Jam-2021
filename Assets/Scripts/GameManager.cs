@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : Singleton<GameManager>
 {
     public PlayerController player;
+    public GameObject Pinata;
     public enum GameStates{TitleScreen, Paused, InGame };
     public GameStates currentState = GameStates.TitleScreen;
 
@@ -19,6 +20,8 @@ public class GameManager : Singleton<GameManager>
         GameStarted += OnGameStart;
         if (player == null)
             player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        if (Pinata == null)
+            Pinata = GameObject.FindGameObjectWithTag("Pinata");
     }
 
     // Update is called once per frame

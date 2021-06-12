@@ -6,11 +6,13 @@ public class KidWithBat : MonoBehaviour
 {
     public Rigidbody2D kidRig;
     public BoxCollider2D assignedPlatform;
+    public string[] groundTags = { "Ground", "Platform" };
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (kidRig == null)
+            kidRig = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -21,9 +23,9 @@ public class KidWithBat : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(assignedPlatform == null )
+        if(assignedPlatform == null && PlayerController.checkTags(collision.collider.tag, groundTags))
         {
-
+            assignedPlatform = collision.gameObject.GetComponent<BoxCollider2D>();
         }
     }
 }

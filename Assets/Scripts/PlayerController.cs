@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     public Transform groundCheck;
     public string[] groundTags = { "Ground", "Platform", "Pinata" };
 
-    public float horizontalInput { get; private set; } 
+    public float horizontalInput { get; private set; }
     public bool airborne { get; private set; }
     public bool jumpPressed { get; private set; }
 
