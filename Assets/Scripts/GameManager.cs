@@ -35,4 +35,9 @@ public class GameManager : Singleton<GameManager>
     {
         
     }
+
+    public void PinataDied()
+    {
+        Debug.Log("Pinata Died");
+    }
 }
