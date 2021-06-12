@@ -19,14 +19,14 @@ public class AnimationScript : MonoBehaviour
         playerSprite = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
 
-        if (anim != null)
-        {
-            Debug.Log("AnimationScript found the PlayerController");
-        }
-        if (playerController != null)
-        {
-            Debug.Log("AnimationScript found the Animator");
-        }
+        //if (anim != null)
+        //{
+        //    Debug.Log("AnimationScript found the PlayerController");
+        //}
+        //if (playerController != null)
+        //{
+        //    Debug.Log("AnimationScript found the Animator");
+        //}
     }
 
     // Update is called once per frame
