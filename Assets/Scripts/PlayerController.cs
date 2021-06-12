@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public float airMoveSpeed = 5f;
-    public float jumpForce = 100f;
+    public float jumpForce = 7f;
     public Rigidbody2D myRig;
     public KeyCode[] jumpButton;
     public KeyCode[] actionButton;

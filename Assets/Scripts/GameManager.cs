@@ -13,7 +13,7 @@ public class GameManager : Singleton<GameManager>
     public event GameStartHandler GameStarted;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         //Example of how to register Event Listenter
         //GameManager.Instance.GameStarted += OnGameStart;
