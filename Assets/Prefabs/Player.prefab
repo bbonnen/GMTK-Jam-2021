@@ -184,11 +184,14 @@ MonoBehaviour:
   jumpForce: 7
   myRig: {fileID: 7505666880307846266}
   jumpButton: 6600000020000000
+  actionButton: 
   groundCheck: {fileID: 1396070987}
   groundTags:
   - Ground
   - Platform
   - Pinata
+  audioSource: {fileID: 0}
+  jumpSound: {fileID: 0}
 --- !u!120 &791127498
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -316,6 +319,9 @@ MonoBehaviour:
   pinataString: {fileID: 0}
   stringLengthRange: {x: 1.5, y: 8}
   playerDistanceRange: {x: 1.5, y: 12}
+  yankButton: 6500000030010000
+  yankRecoveryTime: 1
+  yankDistance: 0.5
 --- !u!114 &8182939626647817865
 MonoBehaviour:
   m_ObjectHideFlags: 0

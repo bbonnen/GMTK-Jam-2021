@@ -16,12 +16,14 @@ public class KidWithBat : MonoBehaviour
     public Transform batPivot;
     public float batSwingTime = 0.2f;
     private float currentSwingTime = 0;
+    public float jumpForce = 3f;
 
 
     public float decisionTime = 0.3f;
     private float timeSinceDecision = 0f;
     private float edgeOffset = 0.2f;
     private bool swingingBat = false;
+    public bool jumping { get; private set; }
     public float moveDirection { get; private set; }
 
     // Start is called before the first frame update
@@ -33,6 +35,7 @@ public class KidWithBat : MonoBehaviour
             pinata = GameManager.Instance.Pinata.transform;
         moveDirection = 0;
         timeSinceDecision = decisionTime;
+        jumping = false;
     }
 
     // Update is called once per frame
@@ -49,10 +52,12 @@ public class KidWithBat : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(assignedPlatform == null && PlayerController.checkTags(collision.collider.tag, groundTags))
+        if (assignedPlatform == null && PlayerController.checkTags(collision.collider.tag, groundTags))
         {
             assignedPlatform = collision.gameObject.GetComponent<BoxCollider2D>();
         }
+        else if (jumping && collision.collider == (BoxCollider2D)assignedPlatform)
+            jumping = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -60,7 +65,6 @@ public class KidWithBat : MonoBehaviour
         if(collision.tag == "Pinata")
         {
             Vector2 forceDirection = Vector2.ClampMagnitude(pinata.position - transform.position, 1.0f);
-            Debug.Log(forceDirection);
             pinata.GetComponent<Rigidbody2D>().AddForce(forceDirection * pinataHitForce, ForceMode2D.Impulse);
             swingingBat = true;
             pinata.GetComponent<PinataHealth>().GotHit();
@@ -86,11 +90,19 @@ public class KidWithBat : MonoBehaviour
         {
             timeSinceDecision = 0;
             float pinataDist = Vector2.Distance(transform.position, pinata.position);
-            if (pinataDist < distanceToChasePinata)
+            if (pinataDist < distanceToChasePinata && !jumping)
             {
+                Vector2 pinataDirection = pinata.position - transform.position;
                 moveDirection = Mathf.Sign(pinata.position.x - transform.position.x);
+                if(pinataDirection.y > Mathf.Abs(pinataDirection.x))
+                {
+                    jumping = true;
+                    moveDirection = 0;
+                    kidRig.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+                }
+
             }
-            else
+            else if(!jumping)
                 moveDirection = Mathf.Sign(Random.Range(-1, 1));
         }
 
