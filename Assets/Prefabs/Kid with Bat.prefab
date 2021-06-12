@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1537846839882715091}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1537846840384640928}
   - component: {fileID: 1537846840384640929}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 1537846840457529759}
   - component: {fileID: 1537846840457529824}
   - component: {fileID: 1537846840457529825}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Kid with Bat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -200,7 +200,7 @@ GameObject:
   - component: {fileID: 1537846841166404689}
   - component: {fileID: 1537846841166404692}
   - component: {fileID: 1537846841166404690}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Child Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

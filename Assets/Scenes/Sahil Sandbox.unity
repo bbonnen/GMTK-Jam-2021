@@ -1168,7 +1168,6 @@ GameObject:
   - component: {fileID: 1422541686}
   - component: {fileID: 1422541687}
   - component: {fileID: 1422541688}
-  - component: {fileID: 1422541689}
   m_Layer: 0
   m_Name: Pinata
   m_TagString: Pinata
@@ -1419,20 +1418,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endPoint: {fileID: 709156223}
---- !u!114 &1422541689
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1422541681}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b37825af00552324eb9dd5d802f90e27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minAngle: {x: 0, y: 0, z: -30}
-  maxAngle: {x: 0, y: 0, z: 30}
 --- !u!1 &1489622610
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1396070987}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 791127498}
   - component: {fileID: 4026890101375834320}
   - component: {fileID: 7505666880725481909}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -183,6 +183,7 @@ MonoBehaviour:
   jumpForce: 7
   myRig: {fileID: 7505666880307846266}
   jumpButton: 6600000020000000
+  actionButton: 
   groundCheck: {fileID: 1396070987}
   groundTags:
   - Ground
