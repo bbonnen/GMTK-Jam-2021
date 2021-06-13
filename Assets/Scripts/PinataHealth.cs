@@ -13,6 +13,10 @@ public class PinataHealth : MonoBehaviour
 
     //havokk
     AudioSource audiosource;
+    public ParticleSystem particle;
+    public float particleTime = 2f;
+
+    public ParticleSystem particleDeath;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +24,7 @@ public class PinataHealth : MonoBehaviour
         currentHealth = maxHealth;
 
         audiosource = GetComponent<AudioSource>();
+        particle.Stop();
     }
 
     public void GotHit(float damage = 0)
@@ -28,11 +33,23 @@ public class PinataHealth : MonoBehaviour
             damage = damagePerHit;
         currentHealth -= damage;
         healthBar.localScale = new Vector3(Mathf.Lerp(0, maxHealthScale, currentHealth / maxHealth), healthBar.localScale.y, healthBar.localScale.z);
+
+        particle.transform.position = transform.position;
+        particle.Play();
+        StartCoroutine(KillParticle());
+
         if (currentHealth <= 0)
         {
             GameManager.Instance.PinataDied();
             audiosource.Play();
+            particleDeath.Play();
         }
 
+    }
+
+    IEnumerator KillParticle()
+    {
+        yield return new WaitForSeconds(particleTime);
+        particle.Stop();
     }
 }
