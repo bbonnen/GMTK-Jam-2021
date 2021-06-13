@@ -7,6 +7,7 @@ public class GameManager : Singleton<GameManager>
     public PlayerController player;
     public GameObject presentPref;
     public GameObject Pinata;
+    public GameObject gameOverBanner;
     public float presentSpawnOffsetRange;
     public enum GameStates{TitleScreen, Paused, InGame };
     public GameStates currentState = GameStates.TitleScreen;
@@ -44,6 +45,7 @@ public class GameManager : Singleton<GameManager>
     public void PinataDied()
     {
         Debug.Log("Pinata Died");
+        Instantiate(gameOverBanner, new Vector3(0.0f,0.0f,0.0f), Quaternion.identity);
     }
 
     private void SpawnPresent()
@@ -56,7 +58,6 @@ public class GameManager : Singleton<GameManager>
         Vector3 randomSpawnPoint = SpawnPointPositions[randomSpawnIndex] + offset;
 
         Instantiate(presentPref, randomSpawnPoint, Quaternion.identity);
-
     }
 
     public void PresentWrapped()

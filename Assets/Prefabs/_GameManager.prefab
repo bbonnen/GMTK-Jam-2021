@@ -46,6 +46,8 @@ MonoBehaviour:
   player: {fileID: 0}
   presentPref: {fileID: 7515612531593167341, guid: 804912b1fa01b03468b605f164f47214, type: 3}
   Pinata: {fileID: 0}
+  gameOverBanner: {fileID: 8649532877965913417, guid: 0a889e1815afe4141a9eeb0ac2956989, type: 3}
+  presentSpawnOffsetRange: 0
   currentState: 0
   SpawnPointPositions:
   - {x: 0, y: 0, z: 0}
