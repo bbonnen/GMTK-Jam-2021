@@ -62,7 +62,7 @@ public class Present : MonoBehaviour
             cancelFlag = false;
             isWrapped = true;
 
-            GameManager.Instance.PinataDied();
+            GameManager.Instance.PresentWrapped();
             //PLAY ANIMATION: change appearance to wrapped present
             //PLAY SOUND: Finish wrapping
         }

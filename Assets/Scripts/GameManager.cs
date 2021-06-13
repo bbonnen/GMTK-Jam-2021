@@ -5,9 +5,14 @@ using UnityEngine;
 public class GameManager : Singleton<GameManager>
 {
     public PlayerController player;
+    public GameObject presentPref;
     public GameObject Pinata;
+    public float presentSpawnOffsetRange;
     public enum GameStates{TitleScreen, Paused, InGame };
     public GameStates currentState = GameStates.TitleScreen;
+
+    public Vector3[] SpawnPointPositions;
+    private int score = 0;
 
     public delegate void GameStartHandler();
     public event GameStartHandler GameStarted;
@@ -33,11 +38,30 @@ public class GameManager : Singleton<GameManager>
     //Function called when GameStarted Event is triggered
     void OnGameStart()
     {
-        
+       
     }
 
     public void PinataDied()
     {
         Debug.Log("Pinata Died");
+    }
+
+    private void SpawnPresent()
+    {
+        //Use spawnpoints to create new minigame points
+        float xOffset = Random.Range(3.0f, -3.0f);
+        // Choose spawnpoint
+        int randomSpawnIndex = (int)Mathf.Floor(Random.value * SpawnPointPositions.Length);
+        Vector3 offset = new Vector3(Random.Range(presentSpawnOffsetRange, -presentSpawnOffsetRange), 0.0f, 0.0f);
+        Vector3 randomSpawnPoint = SpawnPointPositions[randomSpawnIndex] + offset;
+
+        Instantiate(presentPref, randomSpawnPoint, Quaternion.identity);
+
+    }
+
+    public void PresentWrapped()
+    {
+        score++;
+        SpawnPresent();
     }
 }

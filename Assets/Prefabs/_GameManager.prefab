@@ -44,4 +44,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  presentPref: {fileID: 7515612531593167341, guid: 804912b1fa01b03468b605f164f47214, type: 3}
+  Pinata: {fileID: 0}
   currentState: 0
+  SpawnPointPositions:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}

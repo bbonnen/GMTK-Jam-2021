@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7515612531593167342}
   - component: {fileID: 4584358947654154208}
   m_Layer: 0
-  m_Name: Present
+  m_Name: PresentPrefab
   m_TagString: Present
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
