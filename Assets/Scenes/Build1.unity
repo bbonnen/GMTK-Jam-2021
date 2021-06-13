@@ -6117,11 +6117,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1537846840457529759, guid: 7427c5a63b010fb4caa293e37fcf6671, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.65
+      value: -3.29
       objectReference: {fileID: 0}
     - target: {fileID: 1537846840457529759, guid: 7427c5a63b010fb4caa293e37fcf6671, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.04
+      value: -2.64
       objectReference: {fileID: 0}
     - target: {fileID: 1537846840457529759, guid: 7427c5a63b010fb4caa293e37fcf6671, type: 3}
       propertyPath: m_LocalPosition.z
@@ -11170,14 +11170,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlatformHitboxes
       objectReference: {fileID: 0}
-    - target: {fileID: 8291474196121965495, guid: 3c214e71b5b134c4db270186cc8d9b9b, type: 3}
-      propertyPath: m_Size.x
-      value: 0.043791212
-      objectReference: {fileID: 0}
-    - target: {fileID: 8291474196121965495, guid: 3c214e71b5b134c4db270186cc8d9b9b, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.0018956065
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c214e71b5b134c4db270186cc8d9b9b, type: 3}
 --- !u!1001 &1843275528
@@ -11644,9 +11636,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1422541686}
     - target: {fileID: 7505666880725481909, guid: 5ede80bad5f49c44399821959e9ca536, type: 3}
+      propertyPath: yankDistance
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7505666880725481909, guid: 5ede80bad5f49c44399821959e9ca536, type: 3}
       propertyPath: connectionPoint
       value: 
       objectReference: {fileID: 709156223}
+    - target: {fileID: 7505666880725481909, guid: 5ede80bad5f49c44399821959e9ca536, type: 3}
+      propertyPath: yankRecoveryTime
+      value: 0.7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ede80bad5f49c44399821959e9ca536, type: 3}
 --- !u!114 &7505666880725481908 stripped
