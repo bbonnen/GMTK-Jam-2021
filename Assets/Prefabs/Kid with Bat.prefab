@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1442327982}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.549, y: 0.159, z: 0}
+  m_LocalPosition: {x: -0.24, y: 0.159, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1537846840457529759}
@@ -111,14 +111,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1537846840384640863}
-  m_LocalRotation: {x: -0, y: -0, z: -0.2567784, w: 0.9664703}
-  m_LocalPosition: {x: 0.29400015, y: 0.227, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0.27640897, w: 0.96104014}
+  m_LocalPosition: {x: -0.294, y: 0.227, z: 0}
   m_LocalScale: {x: 1.7289789, y: 18.538269, z: 1}
   m_Children:
   - {fileID: 1537846839882715091}
   m_Father: {fileID: 1537846840457529759}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -29.758}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 32.092}
 --- !u!212 &1537846840384640929
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -226,10 +226,11 @@ MonoBehaviour:
   pinata: {fileID: 0}
   distanceToChasePinata: 5
   pinataHitForce: 8
-  batSwingRange: {x: -30, y: -70}
+  batSwingRange: {x: 30, y: 70}
   batSprite: {fileID: 1537846840384640928}
   batPivot: {fileID: 1537846839882715091}
   batSwingTime: 0.1
+  jumpForce: 3
   decisionTime: 0.5
 --- !u!50 &1537846840457529825
 Rigidbody2D:
@@ -263,6 +264,7 @@ GameObject:
   - component: {fileID: 1537846841166404689}
   - component: {fileID: 1537846841166404692}
   - component: {fileID: 1537846841166404690}
+  - component: {fileID: 1407711034}
   m_Layer: 7
   m_Name: Child Sprite
   m_TagString: Untagged
@@ -279,7 +281,7 @@ Transform:
   m_GameObject: {fileID: 1537846841166404688}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 15, z: 10}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 1537846840457529759}
   m_RootOrder: 1
@@ -324,8 +326,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4ccb365886dc97640aae6bebcadbf59a, type: 3}
-  m_Color: {r: 0.9245283, g: 0.5006408, b: 0.7992955, a: 1}
+  m_Sprite: {fileID: -6367560908665664636, guid: 40de9a8703e2e5a47882b0b86451c741, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -348,16 +350,35 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.0072184354, y: -0.05321081}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.04, y: 0.04}
+    oldSize: {x: 0.32, y: 0.32}
     newSize: {x: 0.04, y: 0.04}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.04, y: 0.04}
+  m_Size: {x: 0.19126454, y: 0.21103474}
   m_EdgeRadius: 0
+--- !u!95 &1407711034
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1537846841166404688}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 110f62d0e5ba32d48b38471c1cf458a1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
