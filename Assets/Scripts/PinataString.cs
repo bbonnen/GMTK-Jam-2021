@@ -38,7 +38,7 @@ public class PinataString : MonoBehaviour
     void HandleYankButton()
     {
         foreach (KeyCode k in yankButton)
-            if (!yanking && Input.GetKeyDown(k) && GameManager.Instance.player.horizontalInput == 0)
+            if (!yanking && Input.GetKeyDown(k))
             {
                 yanking = true;
                 currentYank = yankRecoveryTime;

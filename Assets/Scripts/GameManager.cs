@@ -49,6 +49,7 @@ public class GameManager : Singleton<GameManager>
         //Time.timeScale = 0;
         if (gameOverText != null)
             gameOverText.enabled = false;
+        SpawnPresent();
     }
 
     // Update is called once per frame
@@ -81,6 +82,8 @@ public class GameManager : Singleton<GameManager>
 
     public void PinataDied()
     {
+        if (currentGameState == GameStates.GameOver)
+            return;
         //Debug.Log("Pinata Died");
         GameEnded();
         Instantiate(gameOverBanner, new Vector3(0.0f,0.0f,0.0f), Quaternion.identity);

@@ -17,6 +17,6 @@ public class DrawRope : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        myLine.SetPositions(new Vector3[] { endPoint.position, transform.position });
+        myLine.SetPositions(new Vector3[] { new Vector3(endPoint.position.x, endPoint.position.y, -2), new Vector3(transform.position.x, transform.position.y, -2) });
     }
 }

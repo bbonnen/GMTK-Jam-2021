@@ -10,6 +10,7 @@ public class PinataHealth : MonoBehaviour
 
     public float maxHealthScale = 1f;
     public Transform healthBar;
+    public Rigidbody2D myRig;
 
     //havokk
     AudioSource audiosource;
@@ -26,6 +27,9 @@ public class PinataHealth : MonoBehaviour
 
         audiosource = GetComponent<AudioSource>();
         particle.Stop();
+        if (myRig == null)
+            myRig = GetComponent<Rigidbody2D>();
+        myRig.AddForce(Vector2.right, ForceMode2D.Force);
         
     }
 
