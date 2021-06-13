@@ -10,8 +10,8 @@ public class GameManager : Singleton<GameManager>
     public GameObject Pinata;
     public GameObject gameOverBanner;
     public float presentSpawnOffsetRange;
-    public enum GameStates{TitleScreen, Paused, InGame };
-    public GameStates currentState = GameStates.TitleScreen;
+    public enum GameStates{TitleScreen, Paused, InGame, GameOver};
+    public GameStates currentGameState = GameStates.TitleScreen;
 
     public Vector3[] SpawnPointPositions;
     public Vector2 minSpawnRange = new Vector2(-8.3f, -4.3f);
@@ -55,8 +55,10 @@ public class GameManager : Singleton<GameManager>
 
     public void PinataDied()
     {
-        Debug.Log("Pinata Died");
+        //Debug.Log("Pinata Died");
         Instantiate(gameOverBanner, new Vector3(0.0f,0.0f,0.0f), Quaternion.identity);
+        currentGameState = GameStates.GameOver;
+        Time.timeScale = 0;
     }
 
     private void SpawnPresent()
