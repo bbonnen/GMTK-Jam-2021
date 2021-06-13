@@ -17,6 +17,7 @@ public class PinataHealth : MonoBehaviour
     public float particleTime = 2f;
 
     public ParticleSystem particleDeath;
+    private bool dead = false;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +26,7 @@ public class PinataHealth : MonoBehaviour
 
         audiosource = GetComponent<AudioSource>();
         particle.Stop();
+        
     }
 
     public void GotHit(float damage = 0)
@@ -41,10 +43,17 @@ public class PinataHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
             GameManager.Instance.PinataDied();
+            dead = true;
             audiosource.Play();
             particleDeath.Play();
         }
 
+    }
+
+    private void Update()
+    {
+        if (dead)
+            particleDeath.transform.position = transform.position;
     }
 
     IEnumerator KillParticle()

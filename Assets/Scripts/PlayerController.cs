@@ -29,17 +29,22 @@ public class PlayerController : MonoBehaviour
         horizontalInput = 0;
         airborne = false;
         jumpPressed = false;
+        GameManager.Instance.GameEnded += OnGameEnd;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (GameManager.Instance.currentGameState == GameManager.GameStates.GameOver)
+            return;
         GetInput();
         //ProcessMovement();
     }
 
     private void FixedUpdate()
     {
+        if (GameManager.Instance.currentGameState == GameManager.GameStates.GameOver)
+            return;
         //myRig.velocity += moveSpeed * Vector2.right * horizontalInput * Time.fixedDeltaTime;
         ProcessMovement();
     }
@@ -98,5 +103,10 @@ public class PlayerController : MonoBehaviour
                 return true;
         }
         return false;
+    }
+
+    void OnGameEnd()
+    {
+
     }
 }

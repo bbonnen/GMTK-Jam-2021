@@ -48,8 +48,11 @@ MonoBehaviour:
   Pinata: {fileID: 0}
   gameOverBanner: {fileID: 8649532877965913417, guid: 0a889e1815afe4141a9eeb0ac2956989, type: 3}
   presentSpawnOffsetRange: 0
-  currentState: 0
+  currentGameState: 0
   SpawnPointPositions:
   - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
+  minSpawnRange: {x: -8.3, y: -4.3}
+  maxSpawnRange: {x: 8.3, y: 3.3}
+  timeBetweenSpawns: 15
+  scoreDisplay: {fileID: 0}
+  gameOverText: {fileID: 0}
