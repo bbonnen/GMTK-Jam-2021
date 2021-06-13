@@ -297,7 +297,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7515612531593167341}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -413,6 +413,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1275732717798944723}
   - component: {fileID: 3977023306319305681}
+  - component: {fileID: 5301349204207444859}
   m_Layer: 0
   m_Name: WrappedBanner
   m_TagString: Untagged
@@ -485,3 +486,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5301349204207444859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9116179828980496901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dac7f2c6648c5548b2786a13d3c55bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
