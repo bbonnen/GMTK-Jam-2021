@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 791127498}
   - component: {fileID: 4026890101375834320}
   - component: {fileID: 7505666880725481909}
+  - component: {fileID: 8182939626647817865}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -189,6 +190,8 @@ MonoBehaviour:
   - Ground
   - Platform
   - Pinata
+  audioSource: {fileID: 0}
+  jumpSound: {fileID: 0}
 --- !u!120 &791127498
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -316,3 +319,19 @@ MonoBehaviour:
   pinataString: {fileID: 0}
   stringLengthRange: {x: 1.5, y: 8}
   playerDistanceRange: {x: 1.5, y: 12}
+  yankButton: 6500000030010000
+  yankRecoveryTime: 1
+  yankDistance: 0.5
+--- !u!114 &8182939626647817865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7505666880307846267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df79dd9a483fe5e46b99b3d59750d3a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionButton: 

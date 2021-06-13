@@ -8,7 +8,7 @@ public class PinataHealth : MonoBehaviour
     public float currentHealth { get; private set; }
     public float damagePerHit = 10f;
 
-    public float maxHealthScale = 0.0333f;
+    public float maxHealthScale = 1f;
     public Transform healthBar;
 
     // Start is called before the first frame update
