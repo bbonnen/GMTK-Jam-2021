@@ -26,6 +26,10 @@ public class KidWithBat : MonoBehaviour
     public bool jumping { get; private set; }
     public float moveDirection { get; private set; }
 
+    //havokk
+    public AudioSource audioSource;
+    public AudioClip audioClip;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +40,7 @@ public class KidWithBat : MonoBehaviour
         moveDirection = 0;
         timeSinceDecision = decisionTime;
         jumping = false;
+
     }
 
     // Update is called once per frame
@@ -68,6 +73,9 @@ public class KidWithBat : MonoBehaviour
             pinata.GetComponent<Rigidbody2D>().AddForce(forceDirection * pinataHitForce, ForceMode2D.Impulse);
             swingingBat = true;
             pinata.GetComponent<PinataHealth>().GotHit();
+
+            //havokk
+            audioSource.Play();
         }
     }
 
