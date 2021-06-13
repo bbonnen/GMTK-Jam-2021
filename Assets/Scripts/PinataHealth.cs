@@ -11,10 +11,15 @@ public class PinataHealth : MonoBehaviour
     public float maxHealthScale = 1f;
     public Transform healthBar;
 
+    //havokk
+    AudioSource audiosource;
+
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
+
+        audiosource = GetComponent<AudioSource>();
     }
 
     public void GotHit(float damage = 0)
@@ -24,6 +29,10 @@ public class PinataHealth : MonoBehaviour
         currentHealth -= damage;
         healthBar.localScale = new Vector3(Mathf.Lerp(0, maxHealthScale, currentHealth / maxHealth), healthBar.localScale.y, healthBar.localScale.z);
         if (currentHealth <= 0)
+        {
             GameManager.Instance.PinataDied();
+            audiosource.Play();
+        }
+
     }
 }
