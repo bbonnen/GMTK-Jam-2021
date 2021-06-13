@@ -55,6 +55,11 @@ public class GameManager : Singleton<GameManager>
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKey("escape"))
+        {
+            Application.Quit();
+        }
+
         timeSinceSpawn += Time.deltaTime;
         if(timeSinceSpawn > timeBetweenSpawns)
         {
