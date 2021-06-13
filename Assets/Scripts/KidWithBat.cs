@@ -27,8 +27,7 @@ public class KidWithBat : MonoBehaviour
     public float moveDirection { get; private set; }
 
     //havokk
-    public AudioSource audioSource;
-    public AudioClip audioClip;
+    AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +40,8 @@ public class KidWithBat : MonoBehaviour
         timeSinceDecision = decisionTime;
         jumping = false;
 
+        //havokk
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
