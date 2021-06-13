@@ -26,21 +26,19 @@ public class Present : MonoBehaviour
 
     public void StartWrapping()
     {
-        Debug.Log("StartWrapping");
         if (!isWrapped && !isWrapping)
         {
-            Debug.Log("StartWrappingSuccess");
             isWrapping = true;
             //start timed event in which at the end, you check the cancel flag and then complete
             StartCoroutine(FinishWrappingOnDelay(wrappingTime));
 
             //PLAY ANIMATION: start a timer bar for the wrapping(animation should last same time as "wrappingTime"
+            //PLAY SOUND: wrappingPresent.wav
         }
     }
 
     public void CancelWrapping()
     {
-        Debug.Log("CancelWrapping");
         if (!isWrapped && isWrapping)
         {
             isWrapping = false;
@@ -51,9 +49,7 @@ public class Present : MonoBehaviour
 
     IEnumerator FinishWrappingOnDelay(float delayTime)
     {
-        Debug.Log("finishWrapping1");
         yield return new WaitForSeconds(delayTime);
-        Debug.Log("finishWrapping2");
         if (cancelFlag)
         {
             //wrapping was canceled, flip flag and do nothing
@@ -65,8 +61,10 @@ public class Present : MonoBehaviour
             //Finish Wrapping, flip flag, call game event
             cancelFlag = false;
             isWrapped = true;
-            Debug.Log("finishwrapping");
+
+            GameManager.Instance.PinataDied();
             //PLAY ANIMATION: change appearance to wrapped present
+            //PLAY SOUND: Finish wrapping
         }
         
     }

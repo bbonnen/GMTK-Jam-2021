@@ -947,7 +947,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8182939626647817865, guid: 5ede80bad5f49c44399821959e9ca536, type: 3}
       propertyPath: actionButton.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ede80bad5f49c44399821959e9ca536, type: 3}
