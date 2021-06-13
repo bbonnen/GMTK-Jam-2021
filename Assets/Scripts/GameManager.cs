@@ -13,6 +13,8 @@ public class GameManager : Singleton<GameManager>
     public GameStates currentState = GameStates.TitleScreen;
 
     public Vector3[] SpawnPointPositions;
+    public Vector2 minSpawnRange = new Vector2(-8.3f, -4.3f);
+    public Vector2 maxSpawnRange = new Vector2(8.3f, 3.3f);
     private int score = 0;
 
     public delegate void GameStartHandler();
@@ -55,7 +57,7 @@ public class GameManager : Singleton<GameManager>
         // Choose spawnpoint
         int randomSpawnIndex = (int)Mathf.Floor(Random.value * SpawnPointPositions.Length);
         Vector3 offset = new Vector3(Random.Range(presentSpawnOffsetRange, -presentSpawnOffsetRange), 0.0f, 0.0f);
-        Vector3 randomSpawnPoint = SpawnPointPositions[randomSpawnIndex] + offset;
+        Vector3 randomSpawnPoint = new Vector3(Random.Range(minSpawnRange.x, maxSpawnRange.x), Random.Range(minSpawnRange.y, maxSpawnRange.y), 0);
 
         Instantiate(presentPref, randomSpawnPoint, Quaternion.identity);
     }

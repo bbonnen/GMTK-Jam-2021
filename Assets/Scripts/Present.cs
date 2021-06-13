@@ -12,6 +12,8 @@ public class Present : MonoBehaviour
     public Transform statusBar;
     public GameObject statusBarParent;
     public GameObject finishBanner;
+    public GameObject unwrappedSprite;
+    public GameObject wrappedBox;
     private float wrappingTimer = 0;
 
     //havokk
@@ -26,6 +28,7 @@ public class Present : MonoBehaviour
         wrappingTime = 2.0f;
         statusBarParent.SetActive(false);
         finishBanner.SetActive(false);
+        wrappedBox.SetActive(false);
 
         audioSource = GetComponent<AudioSource>();
     }
@@ -83,6 +86,8 @@ public class Present : MonoBehaviour
             isWrapped = true;
             statusBarParent.SetActive(false);
             finishBanner.SetActive(true);
+            wrappedBox.SetActive(true);
+            unwrappedSprite.SetActive(false);
 
             GameManager.Instance.PresentWrapped();
             //PLAY ANIMATION: change appearance to wrapped present
