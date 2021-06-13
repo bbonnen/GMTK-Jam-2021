@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -24,6 +25,10 @@ public class GameManager : Singleton<GameManager>
 
     public delegate void GameStartHandler();
     public event GameStartHandler GameStarted;
+    public delegate void GameEndHandler();
+    public event GameEndHandler GameEnded;
+
+    public Text gameOverText;
 
     // Start is called before the first frame update
     void Awake()
@@ -31,10 +36,20 @@ public class GameManager : Singleton<GameManager>
         //Example of how to register Event Listenter
         //GameManager.Instance.GameStarted += OnGameStart;
         GameStarted += OnGameStart;
+        GameEnded += OnGameEnd;
+
         if (player == null)
             player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         if (Pinata == null)
             Pinata = GameObject.FindGameObjectWithTag("Pinata");
+    }
+
+    private void Start()
+    {
+        //Time.timeScale = 0;
+        if (gameOverText != null)
+            gameOverText.enabled = false;
+        SpawnPresent();
     }
 
     // Update is called once per frame
@@ -45,6 +60,10 @@ public class GameManager : Singleton<GameManager>
         {
             SpawnPresent();
         }
+
+        if(currentGameState == GameStates.GameOver && Input.GetKeyDown(KeyCode.Space))
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
     }
 
     //Function called when GameStarted Event is triggered
@@ -53,12 +72,21 @@ public class GameManager : Singleton<GameManager>
        
     }
 
+    void OnGameEnd()
+    {
+        //Time.timeScale = 0;
+        currentGameState = GameStates.GameOver;
+        if (gameOverText != null)
+            gameOverText.enabled = true;
+    }
+
     public void PinataDied()
     {
+        if (currentGameState == GameStates.GameOver)
+            return;
         //Debug.Log("Pinata Died");
+        GameEnded();
         Instantiate(gameOverBanner, new Vector3(0.0f,0.0f,0.0f), Quaternion.identity);
-        currentGameState = GameStates.GameOver;
-        Time.timeScale = 0;
     }
 
     private void SpawnPresent()
