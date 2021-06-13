@@ -26,7 +26,7 @@ public class MiniGameActions : MonoBehaviour
         if (collidingPresent != null)
         {
             touchingPresent = true;
-            if (!controller.airborne && !collidingPresent.isWrapping)
+            if (!collidingPresent.isWrapping)
             {
                 //Start present wrapping
                 collidingPresent.StartWrapping();

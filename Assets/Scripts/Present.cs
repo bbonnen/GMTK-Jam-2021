@@ -54,6 +54,8 @@ public class Present : MonoBehaviour
         {
             isWrapping = false;
             cancelFlag = true;
+
+            statusBarParent.SetActive(false);
             //PLAY ANIMATION: Cancel timer bar wrapping animation
         }
     }
