@@ -11,6 +11,7 @@ public class Present : MonoBehaviour
 
     public Transform statusBar;
     public GameObject statusBarParent;
+    public GameObject finishBanner;
     private float wrappingTimer = 0;
 
     // Start is called before the first frame update
@@ -21,6 +22,7 @@ public class Present : MonoBehaviour
         cancelFlag = false;
         wrappingTime = 2.0f;
         statusBarParent.SetActive(false);
+        finishBanner.SetActive(false);
     }
 
     // Update is called once per frame
@@ -75,6 +77,7 @@ public class Present : MonoBehaviour
             cancelFlag = false;
             isWrapped = true;
             statusBarParent.SetActive(false);
+            finishBanner.SetActive(true);
 
             GameManager.Instance.PresentWrapped();
             //PLAY ANIMATION: change appearance to wrapped present
