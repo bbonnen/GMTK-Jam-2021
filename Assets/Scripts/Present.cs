@@ -14,6 +14,9 @@ public class Present : MonoBehaviour
     public GameObject finishBanner;
     private float wrappingTimer = 0;
 
+    //havokk
+    AudioSource audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +26,8 @@ public class Present : MonoBehaviour
         wrappingTime = 2.0f;
         statusBarParent.SetActive(false);
         finishBanner.SetActive(false);
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -82,6 +87,7 @@ public class Present : MonoBehaviour
             GameManager.Instance.PresentWrapped();
             //PLAY ANIMATION: change appearance to wrapped present
             //PLAY SOUND: Finish wrapping
+            audioSource.Play();
         }
         
     }
