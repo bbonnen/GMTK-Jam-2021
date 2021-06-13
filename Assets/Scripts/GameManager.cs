@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -15,6 +16,10 @@ public class GameManager : Singleton<GameManager>
     public Vector3[] SpawnPointPositions;
     public Vector2 minSpawnRange = new Vector2(-8.3f, -4.3f);
     public Vector2 maxSpawnRange = new Vector2(8.3f, 3.3f);
+    public float timeBetweenSpawns = 15f;
+    public Text scoreDisplay;
+
+    private float timeSinceSpawn = 0;
     private int score = 0;
 
     public delegate void GameStartHandler();
@@ -35,7 +40,11 @@ public class GameManager : Singleton<GameManager>
     // Update is called once per frame
     void Update()
     {
-        
+        timeSinceSpawn += Time.deltaTime;
+        if(timeSinceSpawn > timeBetweenSpawns)
+        {
+            SpawnPresent();
+        }
     }
 
     //Function called when GameStarted Event is triggered
@@ -52,6 +61,7 @@ public class GameManager : Singleton<GameManager>
 
     private void SpawnPresent()
     {
+        timeSinceSpawn = 0;
         //Use spawnpoints to create new minigame points
         float xOffset = Random.Range(3.0f, -3.0f);
         // Choose spawnpoint
@@ -65,6 +75,7 @@ public class GameManager : Singleton<GameManager>
     public void PresentWrapped()
     {
         score++;
+        scoreDisplay.text = score.ToString();
         SpawnPresent();
     }
 }
