@@ -74,6 +74,7 @@ public class Present : MonoBehaviour
             //Finish Wrapping, flip flag, call game event
             cancelFlag = false;
             isWrapped = true;
+            statusBarParent.SetActive(false);
 
             GameManager.Instance.PresentWrapped();
             //PLAY ANIMATION: change appearance to wrapped present
